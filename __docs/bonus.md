@@ -48,5 +48,5 @@ GET http://{HOSTNAME}/api/v1/machines
 GET http://{HOSTNAME}/api/v1/machines/:id/logs/
 
 # Return logs for given file on a given machine
-GET http://{HOSTNAME}/api/v1/machines/:id/logs/:filename?entires={ENTRIES}&filter={filter}
+GET http://{HOSTNAME}/api/v1/machines/:id/logs/:filename?entries={ENTRIES}&filter={filter}
 ```
