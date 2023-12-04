@@ -1,9 +1,9 @@
 # Design
 The logic for log retrieval is structured around a `/logs/:filename` endpoint that retrieves the logs for a given filename. This implementation was a fairly straightforward Express server with two routes, one for retrieving available files, and one for retrieving the logs for a given file. In addition to those routes validations are implemented to give some basic checks on incoming filenames and queries for entries and filter.
 
-Outside of core API routing the primary hurdle was implementing log read lookup using the node `fs` lib for large files. This lib has standard function for small file reading in memory however it does not handle large files well can can cause memory issues. 
+Outside of core API routing the primary hurdle was implementing log read lookup using the node `fs` lib for large files. This lib has a standard function for reading small files in memory, however it does not handle large files well and can can cause memory issues. 
 
-In order to work around that limitation I implemented a batch read strategy using `fs` read streams so I could read a reasonably sized chunk of data at a time, starting at the end of the file. This allows me to read through very large files in a reasonable time and filter subsets of that data while reading.
+In order to work around that limitation I implemented a batch read strategy using `fs` read streams so I could read a reasonably sized chunk of data at a time, starting at the chunk at the end of the file. This allows me to read through very large files in a reasonable time and filter subsets of that data while reading.
 
 ## Entities
 Core entities involved in the system.
