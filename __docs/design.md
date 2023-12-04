@@ -44,6 +44,9 @@ I also added a limit to max file size of 10 GB to prevent any runaway processes.
 
 These max sizes are all editable in the `/backend/src/conf.js` config file.
 
+### Parallelization
+In order to further improve read times for large files parallelization could be utilized to break up each individual stream read into a thread run in parallel. This would improve read times by the number of threads run.
+
 ### Testing
 Due to time constraints I did not implement a full unit test suite, however that would be required prior to any production release. The tests included are more akin to integration tests than isolated unit tests.
 
