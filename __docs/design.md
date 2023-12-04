@@ -56,6 +56,9 @@ For production authentication may be required to request logs depending on how t
 ### Logging
 Team standards may require logging formats / frameworks to be utilized in the service.
 
+### Documentation
+Swagger documentation would be preferred prior to prod release.
+
 ### CI
 CI processes would be required prior to production release including automated testing, integration testing, linting, and others.
 
